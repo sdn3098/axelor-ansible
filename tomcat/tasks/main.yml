@@ -1,0 +1,31 @@
+---
+# tasks file for tomcat
+- name: CREATE GROUP
+  group:
+          name: tomcat
+          state: present
+- name: CREATE USER
+  user: 
+        name: tomcat
+        shell: /bin/false
+        home: /opt/tomcat
+        group: tomcat
+- name: CREATE DIRECTORY
+  file:
+          path: /opt/tomcat
+          state: directory
+          mode: 0755
+- name: DOWNLOAD AND UNARCHIVE
+  unarchive:
+          src: https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.64/bin/apache-tomcat-8.5.64.tar.gz
+          dest: /opt/tomcat
+          remote_src: yes
+          extra_opts: [--strip-component=1]
+- name: Change ownership
+  file:
+      path: /opt/tomcat
+      owner: tomcat
+      group: tomcat
+      mode: "u+rwx,g+rx,o=rx"
+      recurse: yes
+      state: directory

@@ -1,0 +1,14 @@
+axelor: 
+  - url: https://github.com/axelor/open-suite-webapp/releases/download/v5.4.7/axelor-erp-v5.4.7.war
+
+postgresql_databases:
+  - name: axelor
+postgresql_users:
+  - name: axelor
+    password: axelor
+
+
+# REWRITE CREDENTIALS
+postgresql_database_app: axelor
+postgresql_user_name: axelor
+postgresql_user_password: axelor

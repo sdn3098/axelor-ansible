@@ -1,0 +1,18 @@
+---
+# tasks file for axelor
+- name: Copy Application property file
+  template:
+          src: application.j2
+          dest: /opt/tomcat/application.properties
+- name: DOWNLOAD APP
+  get_url:
+          url: "{{ item.url }}"
+          dest: /opt/tomcat/webapps/ROOT.war
+          mode: '0755'
+  with_items:
+          - "{{ axelor }}"
+- name: Change ownership
+  file:
+          path: /opt/tomcat/ROOT.war
+          owner: tomcat
+          group: tomcat
