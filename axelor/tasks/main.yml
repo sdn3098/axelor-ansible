@@ -16,3 +16,9 @@
           path: /opt/tomcat/ROOT.war
           owner: tomcat
           group: tomcat
+- name: Add group 
+  file:
+        path: /opt/tomcat/application.properties
+        group: tomcat
+- name: START SERVICE
+  command: (su -c "JAVA_OPTS=-Daxelor.config=/opt/tomcat/application.properties /opt/tomcat/bin/catalina.sh run"&)

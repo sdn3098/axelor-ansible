@@ -1,9 +1,7 @@
 ---
-- name: INSTALL JAVA
-  apt:
-   name: openjdk-8-jdk
-   state: present
-- name: ADD JAVA_HOME
-  lineinfile:
-   dest: /etc/environment
-   line: JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+# Setup/install tasks.
+- include_tasks: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include_tasks: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
