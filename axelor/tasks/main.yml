@@ -21,4 +21,4 @@
         path: /opt/tomcat/application.properties
         group: tomcat
 - name: START SERVICE
-  command: (su -c "JAVA_OPTS=-Daxelor.config=/opt/tomcat/application.properties /opt/tomcat/bin/catalina.sh run"&)
+  command: su -c "JAVA_OPTS=-Daxelor.config=/opt/tomcat/application.properties /opt/tomcat/bin/catalina.sh run"
