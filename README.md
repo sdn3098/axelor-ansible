@@ -8,9 +8,11 @@ Create a ansible config file in directory
 $ cd axelor-ansible
 $ vim ansible.cfg
 [defaults]
-inventory = ./hosts
+inventory      = ./hosts
 ```
-Create a Host file with **SERVERIP or HOSTNAME** in the directory
+Create a Host file with **SERVERIP or HOSTNAME** 
 ```
-$ cd axelor-ansible
 $ vim host
+[axelorprod]
+server.example.com
+```
