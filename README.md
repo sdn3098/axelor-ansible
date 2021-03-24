@@ -42,5 +42,122 @@ postgresql_user_password: axelor
 ```
 RUN THE PLAYBOOK
 ```
-$ ansible-playbook --
+$ ansible-playbook --ask-vault-pass play.yml
+```
+# Directory Structure
+```
+axelor-ansible/
+├── README.md
+├── ansible.cfg
+├── axelor
+│   ├── README.md
+│   ├── defaults
+│   │   └── main.yml
+│   ├── handlers
+│   │   └── main.yml
+│   ├── meta
+│   │   └── main.yml
+│   ├── tasks
+│   │   └── main.yml
+│   ├── templates
+│   │   └── application.j2
+│   ├── tests
+│   │   ├── inventory
+│   │   └── test.yml
+│   └── vars
+│       └── main.yml
+├── git
+│   ├── README.md
+│   ├── defaults
+│   │   └── main.yml
+│   ├── handlers
+│   │   └── main.yml
+│   ├── meta
+│   │   └── main.yml
+│   ├── tasks
+│   │   ├── main.yml
+│   │   ├── setup-Debian.yml
+│   │   └── setup-Redhat.yml
+│   ├── tests
+│   │   ├── inventory
+│   │   └── test.yml
+│   └── vars
+│       └── main.yml
+├── hosts
+├── java
+│   ├── README.md
+│   ├── defaults
+│   │   └── main.yml
+│   ├── handlers
+│   │   └── main.yml
+│   ├── meta
+│   │   └── main.yml
+│   ├── tasks
+│   │   ├── main.yml
+│   │   ├── setup-Debian.yml
+│   │   └── setup-Redhat.yml
+│   ├── tests
+│   │   ├── inventory
+│   │   └── test.yml
+│   └── vars
+│       └── main.yml
+├── play.yml
+├── postgres
+│   ├── LICENSE
+│   ├── README.md
+│   ├── defaults
+│   │   └── main.yml
+│   ├── handlers
+│   │   └── main.yml
+│   ├── meta
+│   │   └── main.yml
+│   ├── molecule
+│   │   └── default
+│   │       ├── converge.yml
+│   │       └── molecule.yml
+│   ├── tasks
+│   │   ├── configure.yml
+│   │   ├── databases.yml
+│   │   ├── initialize.yml
+│   │   ├── main.yml
+│   │   ├── setup-Debian.yml
+│   │   ├── setup-RedHat.yml
+│   │   ├── users.yml
+│   │   ├── users_props.yml
+│   │   └── variables.yml
+│   ├── templates
+│   │   ├── pg_hba.conf.j2
+│   │   └── postgres.sh.j2
+│   └── vars
+│       ├── Debian-10.yml
+│       ├── Debian-7.yml
+│       ├── Debian-8.yml
+│       ├── Debian-9.yml
+│       ├── Fedora-29.yml
+│       ├── Fedora-30.yml
+│       ├── Fedora-31.yml
+│       ├── Fedora-32.yml
+│       ├── RedHat-7.yml
+│       ├── RedHat-8.yml
+│       ├── Ubuntu-16.yml
+│       ├── Ubuntu-18.yml
+│       └── Ubuntu-20.yml
+├── tomcat
+│   ├── README.md
+│   ├── defaults
+│   │   └── main.yml
+│   ├── handlers
+│   │   └── main.yml
+│   ├── meta
+│   │   └── main.yml
+│   ├── tasks
+│   │   └── main.yml
+│   ├── tests
+│   │   ├── inventory
+│   │   └── test.yml
+│   └── vars
+│       └── main.yml
+└── vars
+    └── main.yml
+
 ```
