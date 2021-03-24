@@ -9,5 +9,5 @@
           - git
           - java
           - tomcat
-          - postgresql
+          - postgres
           - axelor
